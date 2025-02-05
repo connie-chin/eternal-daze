@@ -1,4 +1,4 @@
-.firstLine {
+/* .firstLine {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
@@ -6,9 +6,9 @@
   align-items: center;
   max-width: 1200px;
   padding: 10px 0;
-}
+} */
 
-.icons {
+/* .icons {
   font-size: 23px;
   display: flex;
   justify-content: space-between;
@@ -19,22 +19,22 @@
 
 .leftIcon {
   width: 78px;
-}
+} */
 
-h1 {
+/* h1 {
   color: orange;
-}
+} */
 
 /* .firstIcon {
   margin-right: 20px;
 } */
 
-.rightIcon {
+/* .rightIcon {
   display: flex;
   height: 100%;
-}
+} */
 
-.navBar {
+/* .navBar {
   width: 92%;
   display: flex;
   justify-content: center;
@@ -42,13 +42,21 @@ h1 {
 
 .navBarTitle {
   margin: 20px;
-}
+} */
 
 .heroImage {
   display: flex;
   justify-content: center;
   width: 100vw;
-  object-fit: fill;
+
+  /* object-fit: fill; */
+  max-width: 1400px;
+}
+
+.heroImage img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 @media (width <=768px) {
