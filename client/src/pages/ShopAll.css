@@ -2,10 +2,6 @@
   width: 100vw;
   max-width: 1200px;
   display: flex;
-
-  /* flex-direction: row; */
-
-  /* align-items: center; */
   border: 2px dotted red;
 }
 
@@ -48,4 +44,5 @@
   .productCard{
     width: 50%;
   }
-} */
+}
+*/

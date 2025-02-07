@@ -22,6 +22,7 @@ export function ShopAll() {
   }, []);
 
   if (isLoading) return <div>Loading Products...</div>;
+
   if (error) {
     return (
       <div>
@@ -32,8 +33,8 @@ export function ShopAll() {
   }
 
   return (
-    <div className="shopAllProducts">
-      <div className="productContainer">
+    <div className="max-w-full mx-auto p-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {shopAll.map((product) => (
           <ProductCard key={product.productId} product={product} />
         ))}
@@ -48,25 +49,17 @@ type ProductProps = {
 
 function ProductCard({ product }: ProductProps) {
   return (
-    // <li>
-    //   <div>
-    //     <p>Testing</p>
-    //     <img className="productPhoto" src={product.imageUrl}/>
-    //   </div>
-    //   <div>
-    //     <p>{product.name}</p>
-    //   </div>
-    //   <div>
-    //     <p>{product.price}</p>
-    //   </div>
-    // </li>
-    <div className="productCard">
-      <div className="productImage">
-        <img src={product.imageUrl} alt={product.name} />
+    <div className="overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div className="w-full h-64 bg-gray-200">
+        <img
+          className="w-full h-full object-contain"
+          src={product.imageUrl}
+          alt={product.name}
+        />
       </div>
-      <div className="productInfo">
-        <h3>{product.name}</h3>
-        <p className="productPrice">${product.price}</p>
+      <div className="p-4 text-center">
+        <h3 className="text-sm font-semibold text-gray-800">{product.name}</h3>
+        <p className="text-sm text-gray-600">${product.price}</p>
       </div>
     </div>
   );
