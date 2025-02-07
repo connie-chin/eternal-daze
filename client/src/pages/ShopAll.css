@@ -1,5 +1,5 @@
 .shopAllProducts {
-  width: 100%;
+  width: 100vw;
   max-width: 1200px;
   display: flex;
 
@@ -12,10 +12,9 @@
 .productContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 8%;
   align-content: flex-start;
   border: 2px solid black;
-  width: 100vw;
   padding: 20px;
 }
 

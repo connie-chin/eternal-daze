@@ -53,7 +53,7 @@
   max-width: 1400px;
 }
 
-.heroImage img {
+/* .heroImage img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -71,4 +71,4 @@
     margin-left: 20px;
     justify-content: flex-end;
   }
-}
+} */
