@@ -6,9 +6,7 @@ export function Header() {
   return (
     <>
       <div className="flex max-w-full border-2 p-7 justify-between md:justify-center md:items-center">
-        <h1 className="text-4xl text-orange-400 md:text-center md:w-full">
-          Eternal Daze
-        </h1>
+        <h1 className="text-4xl text-orange-400">Eternal Daze</h1>
         <div className="flex justify-evenly items-center md:ml-auto">
           <div className="text-2xl w-[30px] flex justify-center md:ml-auto">
             <HiOutlineSearch />
