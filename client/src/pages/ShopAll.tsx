@@ -33,6 +33,7 @@ export function ShopAll() {
   }
 
   return (
+    // <div className='max-w-full h-screen'>
     <div className="max-w-full mx-auto p-4">
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {shopAll.map((product) => (
@@ -40,6 +41,7 @@ export function ShopAll() {
         ))}
       </div>
     </div>
+    // </div>
   );
 }
 
@@ -47,12 +49,12 @@ type ProductProps = {
   product: Product;
 };
 
-function ProductCard({ product }: ProductProps) {
+export function ProductCard({ product }: ProductProps) {
   return (
-    <div className="overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-      <div className="w-full h-64 bg-gray-200">
+    <div className="overflow-hidden hover:shadow-lg transition-shadow duration-300 relative group">
+      <div className="w-full h-64 flex justify-center relative">
         <img
-          className="w-full h-full object-contain"
+          className="w-[260px] h-full object-cover transition-opacity duration-300 group-hover:opacity-70" // Added the opacity transition
           src={product.imageUrl}
           alt={product.name}
         />

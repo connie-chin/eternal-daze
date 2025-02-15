@@ -26,20 +26,6 @@ app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello, World!' });
 });
 
-app.get('/api/categories', async (req, res, next) => {
-  try {
-    const sql = `
-    select * from "categories"
-    order by "categoryId";
-    `;
-    const result = await db.query(sql);
-    const categories = result.rows;
-    res.json(categories);
-  } catch (err) {
-    next(err);
-  }
-});
-
 app.get('/api/products', async (req, res, next) => {
   try {
     const sql = `
@@ -49,6 +35,48 @@ app.get('/api/products', async (req, res, next) => {
     const result = await db.query(sql);
     const products = result.rows;
     res.json(products);
+  } catch (err) {
+    next(err);
+  }
+});
+
+app.get('/api/products/shirts', async (req, res, next) => {
+  try {
+    const sql = `
+    select * from "products"
+    where "categoryId" = 1;
+    `;
+    const result = await db.query(sql);
+    const shirts = result.rows;
+    res.json(shirts);
+  } catch (err) {
+    next(err);
+  }
+});
+
+app.get('/api/products/pants', async (req, res, next) => {
+  try {
+    const sql = `
+    select * from "products"
+    where "categoryId" = 2;
+    `;
+    const result = await db.query(sql);
+    const pants = result.rows;
+    res.json(pants);
+  } catch (err) {
+    next(err);
+  }
+});
+
+app.get('/api/products/shoes', async (req, res, next) => {
+  try {
+    const sql = `
+    select * from "products"
+    where "categoryId"=3;
+    `;
+    const result = await db.query(sql);
+    const shoes = result.rows;
+    res.json(shoes);
   } catch (err) {
     next(err);
   }
