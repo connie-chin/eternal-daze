@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Shirts } from './pages/Shirts';
 import { Pants } from './pages/Pants';
 import { Shoes } from './pages/Shoes';
+import { Details } from './pages/Details';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="shirts" element={<Shirts />} />
         <Route path="pants" element={<Pants />} />
         <Route path="shoes" element={<Shoes />} />
+        <Route path="products/:productId" element={<Details />} />
       </Route>
     </Routes>
   );

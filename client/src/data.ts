@@ -26,7 +26,7 @@ export async function viewShirts() {
 }
 
 export async function viewPants() {
-  const response = await fetch(`api/products/pants`);
+  const response = await fetch(`/api/products/pants`);
   if (!response.ok) {
     throw new Error(`fetch error ${response.status}`);
   }
@@ -35,10 +35,19 @@ export async function viewPants() {
 }
 
 export async function viewShoes() {
-  const response = await fetch(`api/products/shoes`);
+  const response = await fetch(`/api/products/shoes`);
   if (!response.ok) {
     throw new Error(`fetch error ${response.status}`);
   }
   const shoes = await response.json();
   return shoes;
+}
+
+export async function viewProductDetail(productId: number) {
+  const response = await fetch(`/api/products/${productId}`);
+  if (!response.ok) {
+    throw new Error(`fetch error ${response.status}`);
+  }
+  const productDetail = await response.json();
+  return productDetail;
 }
