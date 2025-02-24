@@ -82,6 +82,28 @@ app.get('/api/products/shoes', async (req, res, next) => {
   }
 });
 
+app.get('/api/products/:productId', async (req, res, next) => {
+  try {
+    const { productId } = req.params;
+    if (!productId || !Number.isInteger(+productId)) {
+      throw new ClientError(400, 'productId required');
+    }
+    const sql = `
+    select * from "products"
+    where "productId"=$1;
+    `;
+    const params = [productId];
+    const result = await db.query(sql, params);
+    const productDetail = result.rows[0];
+    if (!productDetail) {
+      throw new Error(`productId ${productId} not found`);
+    }
+    res.json(productDetail);
+  } catch (err) {
+    next(err);
+  }
+});
+
 /*
  * Handles paths that aren't handled by any other route handler.
  * It responds with `index.html` to support page refreshes with React Router.

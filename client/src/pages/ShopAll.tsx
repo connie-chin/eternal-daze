@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { viewProducts, Product } from '../data';
 import './ShopAll.css';
 import { RotatingCarousel } from '../components/RotatingCarousel';
+import { Link } from 'react-router-dom';
 
 export function ShopAll() {
   const [shopAll, setShopAll] = useState<Product[]>([]);
@@ -61,22 +62,26 @@ export function ProductCard({ product }: ProductProps) {
   }
 
   return (
-    <div className="overflow-hidden hover:shadow-lg transition-shadow duration-300 relative group">
-      <div className="w-full h-80 flex justify-center relative">
-        {/* <img
+    <div className="overflow-hidden hover:shadow-lg transition-shadow duration-300 relative group border-2 border-red-400">
+      <Link to={`products/${product.productId}`}>
+        <div className="w-full h-80 flex justify-center relative">
+          {/* <img
           className="w-[260px] h-full object-cover transition-opacity duration-300 group-hover:opacity-70" // Added the opacity transition
           src={imageUrls[0]}
           alt={product.name}
         /> */}
-        <RotatingCarousel
-          imageUrl={imageUrls}
-          className="w-[260px] h-full object-cover group-hover:opacity-70"
-        />
-      </div>
-      <div className="p-4 text-center">
-        <h3 className="text-sm font-semibold text-gray-800">{product.name}</h3>
-        <p className="text-sm text-gray-600">${product.price}</p>
-      </div>
+          <RotatingCarousel
+            imageUrl={imageUrls}
+            className="w-[260px] h-full object-cover group-hover:opacity-70"
+          />
+        </div>
+        <div className="p-4 text-center">
+          <h3 className="text-sm font-semibold text-gray-800">
+            {product.name}
+          </h3>
+          <p className="text-sm text-gray-600">${product.price}</p>
+        </div>
+      </Link>
     </div>
   );
 }
