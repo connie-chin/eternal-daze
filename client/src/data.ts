@@ -51,3 +51,30 @@ export async function viewProductDetail(productId: number) {
   const productDetail = await response.json();
   return productDetail;
 }
+
+export async function viewPantsProductDetail(productId: number) {
+  const response = await fetch(`/api/products/pants/${productId}`);
+  if (!response.ok) {
+    throw new Error(`fetch error ${response.status}`);
+  }
+  const pantProductDetail = await response.json();
+  return pantProductDetail;
+}
+
+export async function viewShirtsProductDetail(productId: number) {
+  const response = await fetch(`/api/products/shirts/${productId}`);
+  if (!response.ok) {
+    throw new Error(`fetch error ${response.status}`);
+  }
+  const shirtProductDetail = await response.json();
+  return shirtProductDetail;
+}
+
+export async function viewShoesProductDetail(productId: number) {
+  const response = await fetch(`/api/products/shoes/${productId}`);
+  if (!response.ok) {
+    throw new Error(`fetch error ${response.status}`);
+  }
+  const shoeProductDetail = await response.json();
+  return shoeProductDetail;
+}

@@ -26,7 +26,7 @@ values
     ('1980s Plant Shirt', 45, 'this would be where the measurement info goes', '["images/IMG_purpleShirtFront.JPG", "images/IMG_purpleShirtBack.JPG"]', 1),
     ('1990s Polo Shirt', 25, 'this would be where the measurement info goes', '["images/IMG_whitePoloFront.JPG", "images/IMG_whitePoloShirtBack.JPG"]', 1),
     ('1980s Makeup Shirt', 45, 'this would be where the measurement info goes', '["images/IMG_makeupShirtFront.JPG", "images/IMG_makeupShirtBack.JPG"]', 1),
-    ('1990s Crochet Top', 30, 'this would be where the measurement info goes', '["images/IMG_whiteCrochetShirtBack.JPG", "images/IMG_crochetShirtFront.JPG"]', 1),
+    ('1990s Crochet Top', 30, 'this would be where the measurement info goes', '["images/IMG_crochetShirtFront.JPG", "images/IMG_whiteCrochetShirtBack.JPG"]', 1),
     ('1970s Bear Shirt', 65, 'this would be where the measurement info goes', '["images/IMG_bearShirtFront.JPG", "images/IMG_blueShirtBack.JPG"]', 1),
     ('1970s BoyScout Pants', 70, 'this would be where measurement info goes', '["images/IMG_cordPantsFront.JPG", "images/IMG_cordPantsBack.JPG"]', 2),
     ('1970s Flair Jean Pants', 75, 'this would be where the measurement info goes', '["images/IMG_flairJeansFront.JPG", "images/IMG_flairJeansBack.JPG"]', 2),

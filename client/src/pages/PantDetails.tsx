@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { viewProductDetail } from '../data';
+import { viewPantsProductDetail } from '../data';
 import { Product } from '../data';
 
-export function Details() {
+export function PantDetails() {
   const [productDetail, setProductDetail] = useState<Product>();
   const { productId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
@@ -11,10 +11,10 @@ export function Details() {
   const [mainImage, setMainImage] = useState<string | null>(null); // State to hold the main image URL
 
   useEffect(() => {
-    async function loadProductDetails(productId: number) {
+    async function loadPantProductDetails(productId: number) {
       setIsLoading(true);
       try {
-        const productDetail = await viewProductDetail(productId);
+        const productDetail = await viewPantsProductDetail(productId);
         if (!productDetail)
           throw new Error(`Product with ID ${productId} not found`);
         setProductDetail(productDetail);
@@ -32,7 +32,7 @@ export function Details() {
         setIsLoading(false);
       }
     }
-    loadProductDetails(Number(productId));
+    loadPantProductDetails(Number(productId));
   }, [productId]);
 
   if (isLoading) return <div>Loading Products...</div>;
@@ -108,7 +108,7 @@ export function Details() {
             </h3>
 
             <div className="mt-4">
-              <button className="bg-[#D97941] text-white py-3 px-8 rounded-lg w-full hover:bg-orange-600 transition">
+              <button className="bg-orange-500 text-white py-3 px-8 rounded-lg w-full hover:bg-orange-600 transition">
                 Add To Cart
               </button>
             </div>
