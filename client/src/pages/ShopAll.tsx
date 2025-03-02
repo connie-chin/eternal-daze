@@ -62,14 +62,9 @@ export function ProductCard({ product }: ProductProps) {
   }
 
   return (
-    <div className="overflow-hidden hover:shadow-lg transition-shadow duration-300 relative group border-2 border-red-400">
+    <div className="overflow-hidden hover:shadow-lg transition-shadow duration-300 relative group">
       <Link to={`products/${product.productId}`}>
         <div className="w-full h-80 flex justify-center relative">
-          {/* <img
-          className="w-[260px] h-full object-cover transition-opacity duration-300 group-hover:opacity-70" // Added the opacity transition
-          src={imageUrls[0]}
-          alt={product.name}
-        /> */}
           <RotatingCarousel
             imageUrl={imageUrls}
             className="w-[260px] h-full object-cover group-hover:opacity-70"
